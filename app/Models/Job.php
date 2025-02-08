@@ -12,6 +12,16 @@ class Job extends Model
     /** @use HasFactory<\Database\Factories\JobFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'salary',
+        'location',
+        'schedule',
+        'url',
+        'featured',
+        'employer_id',
+    ];
+
     public function tag(string $name): void
     {
         $tag = Tag::firstOrCreate(['name' => $name]);
